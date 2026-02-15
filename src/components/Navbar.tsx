@@ -68,7 +68,7 @@ const Navbar: React.FC = () => {
             className="text-2xl font-light tracking-widest text-[#D4AF37] cursor-pointer font-serif"
             href="/"
           >
-            LIFEPATH
+            SCOTT BAXTER
           </Link>
 
           <div className="hidden md:flex space-x-8 text-[11px] uppercase tracking-[0.2em] font-light">

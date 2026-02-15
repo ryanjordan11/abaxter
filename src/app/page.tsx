@@ -63,7 +63,7 @@ const HomePage = () => (
         <SectionHeader title="The Oracle’s Path" subtitle="Five Decades of Devotion" />
         <div className="space-y-6 text-gray-400 font-light leading-relaxed text-lg">
           <p>This is not a hobby. This is five decades of devotion. Astrology studied since 1974. Personality systems practiced for nearly 40 years.</p>
-          <p>LifePath exists for one reason: To help you see yourself clearly enough that your outer world reorganizes around truth.</p>
+          <p>Scott Baxter's work exists for one reason: To help you see yourself clearly enough that your outer world reorganizes around truth.</p>
           <p>We are not here to predict your future. We are here to reveal your design.</p>
         </div>
       </div>

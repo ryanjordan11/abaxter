@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "LifePath",
-  description: "Soul analysis, numerology, and relationship alignment tools.",
+  title: "Scott Baxter",
+  description: "Soul analysis, numerology, and relationship alignment by Scott Baxter.",
 };
 
 export default function RootLayout({
