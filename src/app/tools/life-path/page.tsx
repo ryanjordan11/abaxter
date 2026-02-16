@@ -141,7 +141,7 @@ const LifePathPage: React.FC = () => {
             <div className="mt-4 space-y-3 font-light">
               <p>Group Month, Day, and Year separately, reducing each group to a single digit unless 11 or 22 appears.</p>
               <p>Add the three group totals together, then reduce to a single digit unless 11 or 22 remains in the final result.</p>
-              <p>Example: May 4, 1977 -> (5) + (4) + (1+9+7+7=24->6) -> 5+4+6=15 -> 1+5=6.</p>
+              <p>Example: May 4, 1977 -&gt; (5) + (4) + (1+9+7+7=24-&gt;6) -&gt; 5+4+6=15 -&gt; 1+5=6.</p>
             </div>
           </details>
         </div>
