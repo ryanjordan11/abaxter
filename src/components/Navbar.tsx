@@ -83,10 +83,10 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <nav className="fixed w-full z-50 bg-[var(--nav-bg)] backdrop-blur-md border-b border-[var(--border)]">
+      <nav className="fixed w-full z-50 bg-(--nav-bg) backdrop-blur-md border-b border-(--border)">
         <div className="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
           <Link
-            className="text-2xl font-light tracking-widest text-[var(--accent)] cursor-pointer font-serif"
+            className="text-2xl font-light tracking-widest text-(--accent) cursor-pointer font-serif"
             href="/"
           >
             SCOTT BAXTER
@@ -98,13 +98,13 @@ const Navbar: React.FC = () => {
                 key={link.href}
                 href={link.href}
                 onClick={handleNavClick}
-                className={`relative transition-colors duration-300 hover:text-[var(--accent)] ${
-                  pathname === link.href ? 'text-[var(--accent)]' : 'text-[var(--muted)]'
+                className={`relative transition-colors duration-300 hover:text-(--accent) ${
+                  pathname === link.href ? 'text-(--accent)' : 'text-(--muted)'
                 }`}
               >
                 {link.label}
                 {pathname === link.href && (
-                  <span className="absolute -bottom-1 left-0 w-full h-[1px] bg-[var(--accent)]" />
+                  <span className="absolute -bottom-1 left-0 w-full h-[1px] bg-(--accent)" />
                 )}
               </Link>
             ))}
@@ -115,27 +115,27 @@ const Navbar: React.FC = () => {
                 aria-haspopup="menu"
                 aria-expanded={isToolsOpen}
                 onClick={() => setIsToolsOpen((prev) => !prev)}
-                className={`relative transition-colors duration-300 hover:text-[var(--accent)] ${
-                  toolsActive ? 'text-[var(--accent)]' : 'text-[var(--muted)]'
+                className={`relative transition-colors duration-300 hover:text-(--accent) ${
+                  toolsActive ? 'text-(--accent)' : 'text-(--muted)'
                 }`}
               >
                 Tools
                 {toolsActive && (
-                  <span className="absolute -bottom-1 left-0 w-full h-[1px] bg-[var(--accent)]" />
+                  <span className="absolute -bottom-1 left-0 w-full h-[1px] bg-(--accent)" />
                 )}
               </button>
               {isToolsOpen && (
                 <div
                   role="menu"
-                  className="absolute top-10 right-0 w-56 border border-[var(--border)] bg-[var(--panel-strong)] shadow-lg"
+                  className="absolute top-10 right-0 w-56 border border-(--border) bg-(--panel-strong) shadow-lg"
                 >
                   {toolLinks.map((tool) => (
                     <Link
                       key={tool.href}
                       href={tool.href}
                       onClick={handleNavClick}
-                      className={`block px-4 py-3 text-[11px] uppercase tracking-[0.2em] transition-colors hover:text-[var(--accent)] ${
-                        pathname === tool.href ? 'text-[var(--accent)]' : 'text-[var(--muted)]'
+                      className={`block px-4 py-3 text-[11px] uppercase tracking-[0.2em] transition-colors hover:text-(--accent) ${
+                        pathname === tool.href ? 'text-(--accent)' : 'text-(--muted)'
                       }`}
                     >
                       {tool.label}
@@ -150,13 +150,13 @@ const Navbar: React.FC = () => {
                 key={link.href}
                 href={link.href}
                 onClick={handleNavClick}
-                className={`relative transition-colors duration-300 hover:text-[var(--accent)] ${
-                  pathname === link.href ? 'text-[var(--accent)]' : 'text-[var(--muted)]'
+                className={`relative transition-colors duration-300 hover:text-(--accent) ${
+                  pathname === link.href ? 'text-(--accent)' : 'text-(--muted)'
                 }`}
               >
                 {link.label}
                 {pathname === link.href && (
-                  <span className="absolute -bottom-1 left-0 w-full h-[1px] bg-[var(--accent)]" />
+                  <span className="absolute -bottom-1 left-0 w-full h-[1px] bg-(--accent)" />
                 )}
               </Link>
             ))}
@@ -165,14 +165,14 @@ const Navbar: React.FC = () => {
           <div className="flex items-center gap-4">
             <button
               type="button"
-              className="hidden md:inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-[var(--muted)] hover:text-[var(--accent)] transition-colors"
+              className="hidden md:inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-(--muted) hover:text-(--accent) transition-colors"
               onClick={toggleTheme}
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? <Sun size={16} strokeWidth={1.5} /> : <Moon size={16} strokeWidth={1.5} />}
               {theme === 'dark' ? 'Light' : 'Dark'}
             </button>
-            <button className="md:hidden text-[var(--accent)]" onClick={() => setIsMenuOpen(true)}>
+            <button className="md:hidden text-(--accent)" onClick={() => setIsMenuOpen(true)}>
               <Menu size={24} strokeWidth={1.5} />
             </button>
           </div>
@@ -180,13 +180,13 @@ const Navbar: React.FC = () => {
       </nav>
 
       {isMenuOpen && (
-        <div className="fixed inset-0 bg-[var(--app-bg)] z-[60] flex flex-col items-center justify-center space-y-8 text-xl uppercase tracking-widest font-light font-serif animate-in fade-in duration-300">
-          <button className="absolute top-10 right-10 text-[var(--accent)]" onClick={() => setIsMenuOpen(false)}>
+        <div className="fixed inset-0 bg-(--app-bg) z-[60] flex flex-col items-center justify-center space-y-8 text-xl uppercase tracking-widest font-light font-serif animate-in fade-in duration-300">
+          <button className="absolute top-10 right-10 text-(--accent)" onClick={() => setIsMenuOpen(false)}>
             <X size={32} strokeWidth={1} />
           </button>
 
           {navLinksBeforeTools.map((link) => (
-            <Link key={link.href} href={link.href} onClick={handleNavClick} className="hover:text-[var(--accent)]">
+            <Link key={link.href} href={link.href} onClick={handleNavClick} className="hover:text-(--accent)">
               {link.label}
             </Link>
           ))}
@@ -194,7 +194,7 @@ const Navbar: React.FC = () => {
           <button
             type="button"
             onClick={() => setIsMobileToolsOpen((prev) => !prev)}
-            className="hover:text-[var(--accent)]"
+            className="hover:text-(--accent)"
           >
             Tools
           </button>
@@ -205,7 +205,7 @@ const Navbar: React.FC = () => {
                   key={tool.href}
                   href={tool.href}
                   onClick={handleNavClick}
-                  className="text-[var(--muted)] hover:text-[var(--accent)]"
+                  className="text-(--muted) hover:text-(--accent)"
                 >
                   {tool.label}
                 </Link>
@@ -214,14 +214,14 @@ const Navbar: React.FC = () => {
           )}
 
           {navLinksAfterTools.map((link) => (
-            <Link key={link.href} href={link.href} onClick={handleNavClick} className="hover:text-[var(--accent)]">
+            <Link key={link.href} href={link.href} onClick={handleNavClick} className="hover:text-(--accent)">
               {link.label}
             </Link>
           ))}
 
           <button
             type="button"
-            className="inline-flex items-center gap-2 text-sm uppercase tracking-[0.4em] text-[var(--muted)] hover:text-[var(--accent)] transition-colors"
+            className="inline-flex items-center gap-2 text-sm uppercase tracking-[0.4em] text-(--muted) hover:text-(--accent) transition-colors"
             onClick={toggleTheme}
             aria-label="Toggle theme"
           >

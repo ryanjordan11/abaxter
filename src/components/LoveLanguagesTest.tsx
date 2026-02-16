@@ -34,10 +34,10 @@ const LOVE_QUESTIONS: LoveQuestion[] = [
   { id: 8, A: { text: 'I prefer shared experiences over receiving things.', lang: 'QT' }, B: { text: 'I prefer meaningful gifts over shared activities.', lang: 'RG' } },
   { id: 9, A: { text: 'I feel connected through touch.', lang: 'PT' }, B: { text: 'I feel connected through conversation.', lang: 'QT' } },
   { id: 10, A: { text: 'It means a lot when someone remembers important dates.', lang: 'RG' }, B: { text: 'It means a lot when someone helps reduce my stress.', lang: 'AS' } },
-  { id: 11, A: { text: 'I feel loved when someone says “I’m proud of you.”', lang: 'WA' }, B: { text: 'I feel loved when someone gives me a thoughtful present.', lang: 'RG' } },
+  { id: 11, A: { text: 'I feel loved when someone says \"I\\'m proud of you.\"', lang: 'WA' }, B: { text: 'I feel loved when someone gives me a thoughtful present.', lang: 'RG' } },
   { id: 12, A: { text: 'I value undivided attention.', lang: 'QT' }, B: { text: 'I value affectionate touch.', lang: 'PT' } },
   { id: 13, A: { text: 'Acts of kindness speak louder than words.', lang: 'AS' }, B: { text: 'Compliments speak louder than actions.', lang: 'WA' } },
-  { id: 14, A: { text: 'I’d rather spend meaningful time together.', lang: 'QT' }, B: { text: 'I’d rather receive something meaningful.', lang: 'RG' } },
+  { id: 14, A: { text: 'I\\'d rather spend meaningful time together.', lang: 'QT' }, B: { text: 'I\\'d rather receive something meaningful.', lang: 'RG' } },
   { id: 15, A: { text: 'I feel secure when physically close.', lang: 'PT' }, B: { text: 'I feel secure when someone verbally reassures me.', lang: 'WA' } }
 ];
 
@@ -108,7 +108,7 @@ const LoveLanguagesTest: React.FC = () => {
   const primaryNames = resultsData?.primaryGroup.map((entry) => LOVE_LANGUAGES[entry.key].name).join(' / ') ?? '';
   const secondaryNames = resultsData?.secondaryGroup.length
     ? resultsData.secondaryGroup.map((entry) => LOVE_LANGUAGES[entry.key].name).join(' / ')
-    : '—';
+    : '-';
 
   const tiePrimary = (resultsData?.primaryGroup.length ?? 0) > 1;
   const tieSecondary = (resultsData?.secondaryGroup.length ?? 0) > 1;
@@ -127,7 +127,7 @@ const LoveLanguagesTest: React.FC = () => {
           <div>
             <h1>5 Love Languages Test</h1>
             <p className="sub">
-              Pick <b>one</b> option per question—the one that feels more meaningful to you in a relationship.
+              Pick <b>one</b> option per question - the one that feels more meaningful to you in a relationship.
               When finished, click <b>Get Results</b>.
             </p>
           </div>
@@ -193,7 +193,7 @@ const LoveLanguagesTest: React.FC = () => {
           <div className="grid" id="scoresGrid">
             {resultsData?.entries.map((entry, idx) => (
               <div className="card" key={entry.key}>
-                <h3>#{idx + 1} — {LOVE_LANGUAGES[entry.key].name}</h3>
+                <h3>#{idx + 1} - {LOVE_LANGUAGES[entry.key].name}</h3>
                 <div className="score">{entry.value}</div>
                 <div className="rank">{LOVE_LANGUAGES[entry.key].desc}</div>
               </div>

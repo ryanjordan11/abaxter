@@ -41,7 +41,7 @@ const ContactPage = () => {
     <div className="px-6 py-12 text-center animate-in fade-in duration-700">
       <div className="max-w-xl mx-auto">
         <SectionHeader title="Ready for Clarity?" subtitle="Request Guidance" />
-        <p className="text-[var(--muted)] font-light mb-12 -mt-10">If you feel called, reach out.</p>
+        <p className="text-(--muted) font-light mb-12 -mt-10">If you feel called, reach out.</p>
 
         <form className="space-y-8 text-left" onSubmit={onSubmit}>
           {[
@@ -50,7 +50,7 @@ const ContactPage = () => {
           ].map((field) => (
             <div key={field.label}>
               <label
-                className="text-[10px] uppercase tracking-widest text-[var(--accent)] mb-3 block font-bold"
+                className="text-[10px] uppercase tracking-widest text-(--accent) mb-3 block font-bold"
                 htmlFor={field.name}
               >
                 {field.label}
@@ -61,7 +61,7 @@ const ContactPage = () => {
                 type={field.type}
                 value={form[field.name as 'name' | 'email']}
                 onChange={onChange}
-                className="w-full bg-[var(--panel)] border border-[var(--border)] px-6 py-4 text-[var(--app-fg)] focus:outline-none focus:border-[var(--accent)] transition-all font-light"
+                className="w-full bg-(--panel) border border-(--border) px-6 py-4 text-(--app-fg) focus:outline-none focus:border-(--accent) transition-all font-light"
                 placeholder={field.placeholder}
                 required
               />
@@ -69,7 +69,7 @@ const ContactPage = () => {
           ))}
           <div>
             <label
-              className="text-[10px] uppercase tracking-widest text-[var(--accent)] mb-3 block font-bold"
+              className="text-[10px] uppercase tracking-widest text-(--accent) mb-3 block font-bold"
               htmlFor="message"
             >
               Message
@@ -79,14 +79,14 @@ const ContactPage = () => {
               name="message"
               value={form.message}
               onChange={onChange}
-              className="w-full bg-[var(--panel)] border border-[var(--border)] px-6 py-4 text-[var(--app-fg)] h-40 focus:outline-none focus:border-[var(--accent)] transition-all font-light resize-none"
+              className="w-full bg-(--panel) border border-(--border) px-6 py-4 text-(--app-fg) h-40 focus:outline-none focus:border-(--accent) transition-all font-light resize-none"
               placeholder="How can we guide you?"
               required
             ></textarea>
           </div>
           <button
             type="submit"
-            className="w-full py-5 bg-[var(--accent)] text-[var(--accent-contrast)] uppercase tracking-[0.3em] text-[11px] font-bold hover:bg-[#c4a030] transition-all disabled:opacity-60"
+            className="w-full py-5 bg-(--accent) text-(--accent-contrast) uppercase tracking-[0.3em] text-[11px] font-bold hover:bg-[#c4a030] transition-all disabled:opacity-60"
             disabled={status === 'loading'}
           >
             {status === 'loading' ? 'Sending...' : 'Send Message'}
@@ -94,7 +94,7 @@ const ContactPage = () => {
         </form>
 
         {status === 'success' && (
-          <p className="mt-6 text-[11px] uppercase tracking-[0.3em] text-[var(--accent)]">Message sent.</p>
+          <p className="mt-6 text-[11px] uppercase tracking-[0.3em] text-(--accent)">Message sent.</p>
         )}
         {status === 'error' && (
           <p className="mt-6 text-[11px] uppercase tracking-[0.3em] text-red-300">{error}</p>

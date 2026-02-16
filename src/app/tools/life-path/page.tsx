@@ -84,24 +84,24 @@ const LifePathPage: React.FC = () => {
     <div className="px-6 py-12 animate-in fade-in duration-700">
       <div className="max-w-4xl mx-auto">
         <SectionHeader title="Life Path Calculator" subtitle="Numerology" />
-        <div className="bg-[var(--panel)] border border-[var(--border)] p-8 md:p-12">
-          <p className="text-[var(--muted)] font-light mb-8">Enter your birth date to reveal your Life Path number.</p>
+        <div className="bg-(--panel) border border-(--border) p-8 md:p-12">
+          <p className="text-(--muted) font-light mb-8">Enter your birth date to reveal your Life Path number.</p>
 
           <div className="space-y-6">
             <div>
-              <label className="text-[10px] uppercase tracking-widest text-[var(--accent)] mb-3 block font-bold">Birth Date</label>
+              <label className="text-[10px] uppercase tracking-widest text-(--accent) mb-3 block font-bold">Birth Date</label>
               <input
                 type="date"
                 value={lifePathDate}
                 onChange={(e) => setLifePathDate(e.target.value)}
-                className="w-full bg-[var(--panel)] border border-[var(--border)] px-6 py-4 text-[var(--app-fg)] focus:outline-none focus:border-[var(--accent)] transition-all font-light"
+                className="w-full bg-(--panel) border border-(--border) px-6 py-4 text-(--app-fg) focus:outline-none focus:border-(--accent) transition-all font-light"
               />
             </div>
 
-            <div className="border border-[var(--border)] p-6 bg-[var(--panel-strong)]">
-              <div className="text-[10px] uppercase tracking-[0.3em] text-[var(--muted-strong)]">Your Life Path</div>
-              <div className="text-5xl font-serif text-[var(--accent)] mt-2">{lifePathNumber ? lifePathLabel : '—'}</div>
-              <p className="text-[var(--muted)] font-light mt-4">
+            <div className="border border-(--border) p-6 bg-(--panel-strong)">
+              <div className="text-[10px] uppercase tracking-[0.3em] text-(--muted-strong)">Your Life Path</div>
+              <div className="text-5xl font-serif text-(--accent) mt-2">{lifePathNumber ? lifePathLabel : '-'}</div>
+              <p className="text-(--muted) font-light mt-4">
                 {lifePathNumber
                   ? 'Use this as your blueprint for alignment, communication, and relationship choices.'
                   : 'Select your birth date to calculate your Life Path number.'}
@@ -112,19 +112,19 @@ const LifePathPage: React.FC = () => {
           {lifePathNumber && lifePathTraits[lifePathNumber] && (
             <div className="mt-8 grid md:grid-cols-2 gap-6">
               <div>
-                <div className="text-[10px] uppercase tracking-[0.3em] text-[var(--muted-strong)] mb-3">Strengths</div>
-                <ul className="space-y-2 text-sm text-[var(--muted)] font-light">
+                <div className="text-[10px] uppercase tracking-[0.3em] text-(--muted-strong) mb-3">Strengths</div>
+                <ul className="space-y-2 text-sm text-(--muted) font-light">
                   {lifePathTraits[lifePathNumber].positive.map((trait) => (
                     <li key={trait} className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)]" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-(--accent)" />
                       {trait}
                     </li>
                   ))}
                 </ul>
               </div>
               <div>
-                <div className="text-[10px] uppercase tracking-[0.3em] text-[var(--muted-strong)] mb-3">Shadow</div>
-                <ul className="space-y-2 text-sm text-[var(--muted)] font-light">
+                <div className="text-[10px] uppercase tracking-[0.3em] text-(--muted-strong) mb-3">Shadow</div>
+                <ul className="space-y-2 text-sm text-(--muted) font-light">
                   {lifePathTraits[lifePathNumber].negative.map((trait) => (
                     <li key={trait} className="flex items-center gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-white/30" />
@@ -136,12 +136,12 @@ const LifePathPage: React.FC = () => {
             </div>
           )}
 
-          <details className="mt-8 border-t border-[var(--border)] pt-6 text-sm text-[var(--muted)]">
-            <summary className="cursor-pointer uppercase tracking-[0.3em] text-[10px] text-[var(--accent)]">How it's calculated</summary>
+          <details className="mt-8 border-t border-(--border) pt-6 text-sm text-(--muted)">
+            <summary className="cursor-pointer uppercase tracking-[0.3em] text-[10px] text-(--accent)">How it's calculated</summary>
             <div className="mt-4 space-y-3 font-light">
               <p>Group Month, Day, and Year separately, reducing each group to a single digit unless 11 or 22 appears.</p>
               <p>Add the three group totals together, then reduce to a single digit unless 11 or 22 remains in the final result.</p>
-              <p>Example: May 4, 1977 → (5) + (4) + (1+9+7+7=24→6) → 5+4+6=15 → 1+5=6.</p>
+              <p>Example: May 4, 1977 -> (5) + (4) + (1+9+7+7=24->6) -> 5+4+6=15 -> 1+5=6.</p>
             </div>
           </details>
         </div>

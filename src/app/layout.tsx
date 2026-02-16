@@ -29,7 +29,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="min-h-screen bg-[var(--app-bg)] text-[var(--app-fg)] font-sans selection:bg-[var(--accent)] selection:text-[var(--accent-contrast)]">
+        <div className="min-h-screen bg-(--app-bg) text-(--app-fg) font-sans selection:bg-(--accent) selection:text-(--accent-contrast)">
           <div className="fixed inset-0 pointer-events-none opacity-30">
             <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,_rgba(212,175,55,0.05)_0%,_transparent_70%)]"></div>
           </div>

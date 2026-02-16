@@ -11,6 +11,8 @@
   --nav-bg: rgba(5, 7, 10, 0.9);
   --accent: #d4af37;
   --accent-contrast: #05070a;
+  --font-geist-sans: "Geist", "Helvetica Neue", Arial, sans-serif;
+  --font-geist-mono: "Geist Mono", "SFMono-Regular", "Menlo", monospace;
 }
 
 [data-theme="light"] {
@@ -39,6 +41,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* noinspection CssUnusedSymbol */
 .love-test {
   --bg:#0b0f19;
   --card:#121a2a;
@@ -54,10 +57,9 @@ body {
 .love-test h1 { font-size: 22px; margin:0; }
 .love-test .sub { color: var(--muted); margin: 6px 0 0; line-height: 1.4; max-width: 720px; }
 .love-test .panel { background: var(--card); border:1px solid var(--border); border-radius: 14px; padding: 16px; margin-top: 16px; }
-.love-test .row { display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:space-between; }
 .love-test .pill { display:inline-flex; align-items:center; gap:8px; padding:8px 10px; border:1px solid var(--border); border-radius:999px; color:var(--muted); font-size: 12px; }
 .love-test .progress { width: 260px; max-width: 100%; height: 10px; border:1px solid var(--border); border-radius:999px; overflow:hidden; background:#0e1422; }
-.love-test .bar { height: 100%; width:0%; background: var(--accent); }
+.love-test .bar { height: 100%; width:0; background: var(--accent); }
 .love-test .q { border-top:1px solid var(--border); padding: 16px 0; }
 .love-test .q:first-child { border-top:none; }
 .love-test .qhead { display:flex; gap:12px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; }
