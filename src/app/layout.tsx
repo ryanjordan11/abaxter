@@ -25,11 +25,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="dark" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="min-h-screen bg-[#05070A] text-[#F8F8F8] font-sans selection:bg-[#D4AF37] selection:text-[#05070A]">
+        <div className="min-h-screen bg-[var(--app-bg)] text-[var(--app-fg)] font-sans selection:bg-[var(--accent)] selection:text-[var(--accent-contrast)]">
           <div className="fixed inset-0 pointer-events-none opacity-30">
             <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,_rgba(212,175,55,0.05)_0%,_transparent_70%)]"></div>
           </div>

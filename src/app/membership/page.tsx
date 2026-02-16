@@ -1,12 +1,14 @@
+import Link from 'next/link';
 import { Compass } from 'lucide-react';
+import { PAYPAL_URL } from '@/lib/links';
 
 const MembershipPage = () => (
   <div className="px-6 py-12 text-center animate-in fade-in duration-700">
     <div className="max-w-3xl mx-auto">
       <h1 className="text-6xl font-serif mb-6">Date With Discernment.</h1>
-      <p className="text-[#D4AF37] uppercase tracking-[0.4em] text-xs mb-16">Lifetime Membership</p>
+      <p className="text-[var(--accent)] uppercase tracking-[0.4em] text-xs mb-16">Lifetime Membership</p>
 
-      <div className="bg-[#D4AF37] p-12 md:p-20 text-[#05070A] text-left relative overflow-hidden">
+      <div className="bg-[var(--accent)] p-12 md:p-20 text-[var(--accent-contrast)] text-left relative overflow-hidden">
         <div className="absolute -right-20 -top-20 opacity-10">
           <Compass size={400} strokeWidth={0.5} />
         </div>
@@ -24,13 +26,16 @@ const MembershipPage = () => (
           <div className="border-b border-black/20 pb-2">Timing Alignment</div>
         </div>
 
-        <button className="bg-[#05070A] text-white px-12 py-5 uppercase tracking-[0.2em] text-[10px] hover:bg-slate-900 transition-all" type="button">
+        <Link
+          className="bg-[var(--accent-contrast)] text-[var(--app-fg)] px-12 py-5 uppercase tracking-[0.2em] text-[10px] hover:bg-slate-900 transition-all inline-block"
+          href={PAYPAL_URL}
+        >
           Join Lifetime Membership
-        </button>
+        </Link>
       </div>
 
-      <p className="mt-16 text-gray-500 font-light text-lg">
-        Instead of asking, “Is this right?” <span className="text-[#D4AF37] italic">You’ll know when it is.</span>
+      <p className="mt-16 text-[var(--muted-strong)] font-light text-lg">
+        Instead of asking, “Is this right?” <span className="text-[var(--accent)] italic">You’ll know when it is.</span>
       </p>
     </div>
   </div>
