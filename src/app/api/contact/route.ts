@@ -1,7 +1,7 @@
 export async function POST(request: Request) {
   try {
     await request.json();
-  } catch (error) {
+  } catch {
     return Response.json({ ok: false, placeholder: true }, { status: 400 });
   }
 

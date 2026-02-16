@@ -30,23 +30,23 @@ const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isToolsOpen, setIsToolsOpen] = useState(false);
   const [isMobileToolsOpen, setIsMobileToolsOpen] = useState(false);
-  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+  const [theme, setTheme] = useState<'dark' | 'light'>(() => {
+    if (typeof window === 'undefined') {
+      return 'dark';
+    }
+
+    const stored = window.localStorage.getItem(THEME_KEY);
+    if (stored === 'light' || stored === 'dark') {
+      return stored;
+    }
+
+    return window.matchMedia?.('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  });
   const toolsRef = useRef<HTMLDivElement | null>(null);
 
   const toolsActive = useMemo(() => pathname?.startsWith('/tools') ?? false, [pathname]);
 
   useEffect(() => {
-    const stored = window.localStorage.getItem(THEME_KEY);
-    if (stored === 'light' || stored === 'dark') {
-      setTheme(stored);
-      document.documentElement.setAttribute('data-theme', stored);
-    } else {
-      const prefersLight = window.matchMedia?.('(prefers-color-scheme: light)').matches;
-      const initialTheme = prefersLight ? 'light' : 'dark';
-      setTheme(initialTheme);
-      document.documentElement.setAttribute('data-theme', initialTheme);
-    }
-
     const onClick = (event: MouseEvent) => {
       if (!toolsRef.current) return;
       if (!toolsRef.current.contains(event.target as Node)) {
@@ -68,6 +68,11 @@ const Navbar: React.FC = () => {
       document.removeEventListener('keydown', onKey);
     };
   }, []);
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    window.localStorage.setItem(THEME_KEY, theme);
+  }, [theme]);
 
   const handleNavClick = () => {
     setIsMenuOpen(false);

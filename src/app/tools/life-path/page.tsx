@@ -137,7 +137,7 @@ const LifePathPage: React.FC = () => {
           )}
 
           <details className="mt-8 border-t border-(--border) pt-6 text-sm text-(--muted)">
-            <summary className="cursor-pointer uppercase tracking-[0.3em] text-[10px] text-(--accent)">How it's calculated</summary>
+            <summary className="cursor-pointer uppercase tracking-[0.3em] text-[10px] text-(--accent)">How it&apos;s calculated</summary>
             <div className="mt-4 space-y-3 font-light">
               <p>Group Month, Day, and Year separately, reducing each group to a single digit unless 11 or 22 appears.</p>
               <p>Add the three group totals together, then reduce to a single digit unless 11 or 22 remains in the final result.</p>

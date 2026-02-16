@@ -31,7 +31,7 @@ const ContactPage = () => {
 
       setStatus('success');
       setForm({ name: '', email: '', message: '' });
-    } catch (submitError) {
+    } catch {
       setStatus('error');
       setError('Something went wrong. Please try again.');
     }
