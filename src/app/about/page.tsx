@@ -1,5 +1,19 @@
+import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import SectionHeader from '@/components/SectionHeader';
+
+export const metadata: Metadata = {
+  title: 'About',
+  description: 'Five decades of astrology, personality systems, and soul-level clarity from Scott Baxter.',
+  keywords: ['about Scott Baxter', 'life path coach', 'astrology since 1974', 'personality typing']
+};
+
+export const metadata: Metadata = {
+  title: 'About',
+  description: 'Five decades of astrology, personality systems, and soul-level clarity from Scott Baxter.',
+  keywords: ['about Scott Baxter', 'life path coach', 'astrology since 1974', 'personality typing']
+};
 
 const AboutPage = () => (
   <div className="px-6 py-12 animate-in fade-in duration-700">

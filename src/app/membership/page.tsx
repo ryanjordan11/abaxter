@@ -1,6 +1,19 @@
+import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Compass } from 'lucide-react';
 import { PAYPAL_URL } from '@/lib/links';
+
+export const metadata: Metadata = {
+  title: 'Membership',
+  description: 'Soul Mate Searching lifetime membership with ongoing compatibility analysis and guidance.',
+  keywords: ['lifetime membership', 'compatibility analysis', 'relationship coaching', 'soul mate searching']
+};
+
+export const metadata: Metadata = {
+  title: 'Membership',
+  description: 'Soul Mate Searching lifetime membership with ongoing compatibility analysis and guidance.',
+  keywords: ['lifetime membership', 'compatibility analysis', 'relationship coaching', 'soul mate searching']
+};
 
 const MembershipPage = () => (
   <div className="px-6 py-12 animate-in fade-in duration-700">

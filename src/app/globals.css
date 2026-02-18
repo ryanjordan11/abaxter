@@ -41,6 +41,37 @@ body {
   font-family: var(--font-geist-sans);
 }
 
+.testimonial-marquee {
+  overflow: hidden;
+  position: relative;
+}
+
+.testimonial-track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: testimonial-scroll 35s linear infinite;
+}
+
+.testimonial-card {
+  min-width: 280px;
+  max-width: 360px;
+  border: 1px solid var(--border);
+  background: var(--panel-strong);
+  padding: 20px;
+}
+
+@keyframes testimonial-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .testimonial-track {
+    animation: none;
+  }
+}
+
 /* noinspection CssUnusedSymbol */
 .love-test {
   --bg:#0b0f19;

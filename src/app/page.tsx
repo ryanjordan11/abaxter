@@ -1,6 +1,23 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import SectionHeader from '@/components/SectionHeader';
 import { ChevronRight } from 'lucide-react';
+import HowItWorks from '@/components/HowItWorks';
+import Testimonials from '@/components/Testimonials';
+import FAQ from '@/components/FAQ';
+import LeadMagnetForm from '@/components/LeadMagnetForm';
+
+export const metadata: Metadata = {
+  title: 'LifePath Coaching',
+  description: 'Soul-deep clarity through numerology, astrology, and personality alignment. Online readings and compatibility insight.',
+  keywords: [
+    'life path coaching',
+    'numerology reading',
+    'astrology reading',
+    'relationship compatibility',
+    'personality typing'
+  ]
+};
 
 const HomePage = () => (
   <div className="animate-in fade-in slide-in-from-bottom-4 duration-1000">
@@ -68,6 +85,11 @@ const HomePage = () => (
         </div>
       </div>
     </section>
+
+    <HowItWorks />
+    <Testimonials />
+    <LeadMagnetForm />
+    <FAQ />
   </div>
 );
 

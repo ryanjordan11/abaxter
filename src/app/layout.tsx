@@ -4,6 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,9 +16,34 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteName = "Scott Baxter";
+const defaultTitle = "Scott Baxter | LifePath Coaching";
+const defaultDescription = "Soul analysis, numerology, and relationship alignment by Scott Baxter.";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "";
+const metadataBase = siteUrl ? new URL(siteUrl) : undefined;
+
 export const metadata: Metadata = {
-  title: "Scott Baxter",
-  description: "Soul analysis, numerology, and relationship alignment by Scott Baxter.",
+  metadataBase,
+  title: {
+    default: defaultTitle,
+    template: "%s | Scott Baxter"
+  },
+  description: defaultDescription,
+  verification: {
+    google: "1234567"
+  },
+  openGraph: {
+    title: defaultTitle,
+    description: defaultDescription,
+    type: "website",
+    siteName,
+    url: siteUrl || undefined
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: defaultTitle,
+    description: defaultDescription
+  }
 };
 
 const themeScript = `
@@ -40,6 +66,39 @@ export default function RootLayout({
     <html lang="en" data-theme="light" suppressHydrationWarning>
       <head>
         <Script id="theme-init" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <Script
+          id="jsonld-site"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "LocalBusiness",
+                  name: siteName,
+                  url: siteUrl || undefined,
+                  telephone: "(254)654-1671",
+                  email: "baxtersd@gmail.com",
+                  address: {
+                    "@type": "PostalAddress",
+                    streetAddress: "1102 Post Oak St.",
+                    addressLocality: "Hearne",
+                    addressRegion: "TX",
+                    postalCode: "77859",
+                    addressCountry: "US"
+                  },
+                  areaServed: "Online",
+                  priceRange: "$$"
+                },
+                {
+                  "@type": "WebSite",
+                  name: siteName,
+                  url: siteUrl || undefined
+                }
+              ]
+            })
+          }}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -55,6 +114,7 @@ export default function RootLayout({
             {children}
           </main>
 
+          <CTA />
           <Footer />
         </div>
       </body>

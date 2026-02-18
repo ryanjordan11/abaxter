@@ -114,6 +114,27 @@ const ContactPage = () => {
               <div className="text-[10px] uppercase tracking-[0.3em] text-(--muted-strong) mb-2">Contact</div>
               <p>baxtersd@gmail.com</p>
               <p>(254)654-1671</p>
+              <a
+                href="https://wa.me/12546541671"
+                className="inline-flex items-center gap-2 text-(--accent) hover:text-(--app-fg) transition-colors mt-2"
+                aria-label="Chat on WhatsApp"
+              >
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.4 8.4 0 0 1-3.6-.8L3 21l1.9-5.3a8.4 8.4 0 0 1-.9-3.9 8.4 8.4 0 0 1 8.4-8.3 8.4 8.4 0 0 1 8.6 8z" />
+                  <path d="M9 12a1 1 0 0 0 1 1h.5c.3 0 .6-.2.7-.4l.6-.9c.1-.2.3-.2.5-.1l1.4.7c.2.1.3.3.2.5l-.2 1.1c-.1.3-.4.6-.7.6-2.1.4-4.3-1.7-4.8-3.8 0-.3.2-.6.5-.7l1.1-.2c.2 0 .4.1.5.3l.7 1.4c.1.2 0 .4-.1.5l-.9.6c-.2.1-.4.4-.4.7V12z" />
+                </svg>
+                WhatsApp: 12546541671
+              </a>
             </div>
           </div>
         </div>
