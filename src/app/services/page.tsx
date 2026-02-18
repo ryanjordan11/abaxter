@@ -1,14 +1,7 @@
 import type { Metadata } from 'next';
-import type { Metadata } from 'next';
 import Link from 'next/link';
 import SectionHeader from '@/components/SectionHeader';
 import { CALENDLY_URL } from '@/lib/links';
-
-export const metadata: Metadata = {
-  title: 'Services',
-  description: 'Personal blueprint readings, stellium alignment, and integrative oracle sessions for clarity and alignment.',
-  keywords: ['personal blueprint reading', 'stellium alignment', 'numerology', 'astrology reading']
-};
 
 export const metadata: Metadata = {
   title: 'Services',
