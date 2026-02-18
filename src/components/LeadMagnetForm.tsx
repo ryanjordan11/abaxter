@@ -35,7 +35,6 @@ const LeadMagnetForm = () => {
   return (
     <section className="px-6 py-16">
       <div className="max-w-4xl mx-auto text-center border border-(--border) bg-(--panel) p-10 md:p-14">
-        <p className="text-(--accent) uppercase tracking-[0.3em] text-xs font-medium">Lead Magnet</p>
         <h2 className="text-4xl md:text-5xl font-serif mt-4 mb-4">Free Mini Reading</h2>
         <p className="text-(--muted) font-light mb-8">
           Receive a short, focused insight to help you move with clarity. Delivered by email.

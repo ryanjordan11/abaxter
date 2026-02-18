@@ -1,13 +1,6 @@
 import type { Metadata } from 'next';
-import type { Metadata } from 'next';
 import Link from 'next/link';
 import { CALENDLY_URL } from '@/lib/links';
-
-export const metadata: Metadata = {
-  title: 'Relationships',
-  description: 'Structured compatibility analysis integrating astrology, numerology, and personality systems.',
-  keywords: ['compatibility reading', 'synastry analysis', 'relationship alignment', 'soul mate connections']
-};
 
 export const metadata: Metadata = {
   title: 'Relationships',
@@ -19,9 +12,11 @@ const RelationshipsPage = () => (
   <div className="px-6 py-12 animate-in fade-in duration-700">
     <div className="max-w-5xl mx-auto">
       <section className="text-center mb-12">
-        <h1 className="text-5xl md:text-6xl font-serif mb-4">Soul Mate Connections</h1>
-        <p className="text-(--accent) uppercase tracking-[0.3em] text-xs mb-4">Full Synastry &amp; Soul Synthesis for Conscious Partnership</p>
-        <div className="text-4xl md:text-5xl font-serif text-(--accent)">$299</div>
+        <div>
+          <h1 className="text-5xl md:text-6xl font-serif mb-4">Soul Mate Connections</h1>
+          <p className="text-(--accent) uppercase tracking-[0.3em] text-xs mb-4">Full Synastry &amp; Soul Synthesis for Conscious Partnership</p>
+          <div className="text-4xl md:text-5xl font-serif text-(--accent)">$299</div>
+        </div>
       </section>
 
       <div className="bg-(--panel) border border-(--border) p-8 md:p-14">

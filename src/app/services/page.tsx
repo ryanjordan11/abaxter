@@ -51,6 +51,10 @@ const ServicesPage = () => (
   <div className="px-6 py-12 animate-in fade-in duration-700">
     <div className="max-w-6xl mx-auto">
       <SectionHeader title="Personal Blueprint Readings" subtitle="Unlocking the Secrets of Your Soul" />
+      <div className="space-y-4 text-(--muted) font-light leading-relaxed mb-14">
+        <p>Precision guidance across personality, astrology, and numerology for aligned decision-making.</p>
+        <p>Each session is crafted to reveal your blueprint, patterns, and the clearest next step.</p>
+      </div>
       <div className="grid lg:grid-cols-3 gap-8">
         {services.map((service) => (
           <div

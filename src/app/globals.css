@@ -72,6 +72,47 @@ body {
   }
 }
 
+.hero-title {
+  opacity: 0;
+  transform: translateY(-12px);
+  animation: hero-title-in 0.9s ease-out forwards;
+}
+
+.hero-subtitle {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: hero-subtitle-in 0.9s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes hero-title-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-subtitle-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-title,
+  .hero-subtitle {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hero-edge-fade {
+  mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 68%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 68%, rgba(0, 0, 0, 0) 100%);
+}
+
 /* noinspection CssUnusedSymbol */
 .love-test {
   --bg:#0b0f19;

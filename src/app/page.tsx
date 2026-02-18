@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import SectionHeader from '@/components/SectionHeader';
 import { ChevronRight } from 'lucide-react';
@@ -21,32 +22,49 @@ export const metadata: Metadata = {
 
 const HomePage = () => (
   <div className="animate-in fade-in slide-in-from-bottom-4 duration-1000">
-    <section className="min-h-[90vh] flex flex-col items-center justify-center text-center px-6">
-      <h1 className="text-5xl md:text-7xl lg:text-8xl font-light mb-6 font-serif leading-tight">
-        You Don&apos;t Have Relationship Problems.<br />
-        <span className="text-(--accent) italic">You Have Clarity Problems.</span>
-      </h1>
-      <p className="max-w-2xl text-lg md:text-xl font-light leading-relaxed text-(--muted) mb-10">
-        When you understand your soul blueprint, love becomes aligned. Career becomes intentional. Communication becomes effortless.
-      </p>
-      <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
-        <Link
-          href="/services"
-          className="border border-(--accent) text-(--accent) px-8 py-3 uppercase tracking-widest text-[11px] hover:bg-(--accent) hover:text-(--accent-contrast) transition-all"
-        >
-          Discover Your Blueprint
-        </Link>
-        <Link
-          href="/relationships"
-          className="border border-(--accent) text-(--accent) px-8 py-3 uppercase tracking-widest text-[11px] hover:bg-(--accent) hover:text-(--accent-contrast) transition-all"
-        >
-          Find Your Soul Match
-        </Link>
-      </div>
-      <div className="mt-20 text-[10px] uppercase tracking-[0.4em] text-(--muted-strong) font-light italic flex items-center gap-4">
-        <div className="w-12 h-px bg-(--border)"></div>
-        Deciphering destiny since 1974
-        <div className="w-12 h-px bg-(--border)"></div>
+    <section className="min-h-[80vh] flex flex-col items-center justify-center px-6 -mt-[70px] lg:-mt-[78px]">
+      <div className="max-w-6xl mx-auto w-full grid lg:grid-cols-[1.05fr_0.95fr] gap-10 items-start">
+        <div className="text-center lg:text-left -mt-6 lg:-mt-10">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-light mb-5 font-serif leading-tight hero-title">
+            You Don&apos;t Have Relationship Problems.<br />
+            <span className="text-(--accent) italic">You Have Clarity Problems.</span>
+          </h1>
+          <p className="max-w-xl text-base md:text-lg font-light leading-relaxed text-(--muted) mb-8 mx-auto lg:mx-0 hero-subtitle">
+            When you understand your soul blueprint, love becomes aligned. Career becomes intentional. Communication becomes effortless.
+          </p>
+          <div className="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-4 justify-center lg:justify-start">
+            <Link
+              href="/services"
+              className="border border-(--accent) text-(--accent) px-7 py-3 uppercase tracking-widest text-[10px] hover:bg-(--accent) hover:text-(--accent-contrast) transition-all"
+            >
+              Discover Your Blueprint
+            </Link>
+            <Link
+              href="/relationships"
+              className="border border-(--accent) text-(--accent) px-7 py-3 uppercase tracking-widest text-[10px] hover:bg-(--accent) hover:text-(--accent-contrast) transition-all"
+            >
+              Find Your Soul Match
+            </Link>
+          </div>
+          <div className="mt-8 text-[9px] uppercase tracking-[0.35em] text-(--muted-strong) font-light italic flex items-center gap-4 justify-center lg:justify-start">
+            <div className="w-10 h-px bg-(--border)"></div>
+            Deciphering destiny since 1974
+            <div className="w-10 h-px bg-(--border)"></div>
+          </div>
+        </div>
+        <div className="flex justify-center lg:justify-end self-start">
+          <div className="relative w-full max-w-[1000px] aspect-square bg-(--panel) overflow-hidden -mt-[25px] lg:-mt-[33px]">
+            <Image
+              src="/images/hero-01.png"
+              alt="Celestial guidance"
+              fill
+              sizes="(min-width: 1024px) 1000px, 92vw"
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 pointer-events-none hero-edge-fade"></div>
+          </div>
+        </div>
       </div>
     </section>
 

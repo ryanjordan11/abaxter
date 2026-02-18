@@ -1,13 +1,6 @@
 import type { Metadata } from 'next';
-import type { Metadata } from 'next';
 import Image from 'next/image';
 import SectionHeader from '@/components/SectionHeader';
-
-export const metadata: Metadata = {
-  title: 'About',
-  description: 'Five decades of astrology, personality systems, and soul-level clarity from Scott Baxter.',
-  keywords: ['about Scott Baxter', 'life path coach', 'astrology since 1974', 'personality typing']
-};
 
 export const metadata: Metadata = {
   title: 'About',
@@ -40,6 +33,23 @@ const AboutPage = () => (
             className="object-cover"
             priority
           />
+        </div>
+        <div className="mt-6 grid grid-cols-3 gap-3">
+          {[
+            { src: '/images/hero-02.png', alt: 'Astrology chart' },
+            { src: '/images/hero-03.png', alt: 'Numerology symbols' },
+            { src: '/images/hero-04.png', alt: 'Cosmic alignment' }
+          ].map((image) => (
+            <div key={image.src} className="relative aspect-square border border-(--border) bg-(--panel) overflow-hidden">
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                sizes="(min-width: 1024px) 160px, 33vw"
+                className="object-cover"
+              />
+            </div>
+          ))}
         </div>
       </div>
     </div>

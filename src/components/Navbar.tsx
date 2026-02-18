@@ -30,18 +30,8 @@ const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isToolsOpen, setIsToolsOpen] = useState(false);
   const [isMobileToolsOpen, setIsMobileToolsOpen] = useState(false);
-  const [theme, setTheme] = useState<'dark' | 'light'>(() => {
-    if (typeof window === 'undefined') {
-      return 'light';
-    }
-
-    const stored = window.localStorage.getItem(THEME_KEY);
-    if (stored === 'light' || stored === 'dark') {
-      return stored;
-    }
-
-    return 'light';
-  });
+  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+  const [isMounted, setIsMounted] = useState(false);
   const toolsRef = useRef<HTMLDivElement | null>(null);
 
   const toolsActive = useMemo(() => pathname?.startsWith('/tools') ?? false, [pathname]);
@@ -70,9 +60,18 @@ const Navbar: React.FC = () => {
   }, []);
 
   useEffect(() => {
+    setIsMounted(true);
+    const stored = window.localStorage.getItem(THEME_KEY);
+    if (stored === 'light' || stored === 'dark') {
+      setTheme(stored);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!isMounted) return;
     document.documentElement.setAttribute('data-theme', theme);
     window.localStorage.setItem(THEME_KEY, theme);
-  }, [theme]);
+  }, [theme, isMounted]);
 
   const handleNavClick = () => {
     setIsMenuOpen(false);
@@ -85,6 +84,8 @@ const Navbar: React.FC = () => {
     document.documentElement.setAttribute('data-theme', nextTheme);
     window.localStorage.setItem(THEME_KEY, nextTheme);
   };
+
+  const resolvedTheme = isMounted ? theme : 'dark';
 
   return (
     <>
@@ -174,8 +175,8 @@ const Navbar: React.FC = () => {
               onClick={toggleTheme}
               aria-label="Toggle theme"
             >
-              {theme === 'dark' ? <Sun size={16} strokeWidth={1.5} /> : <Moon size={16} strokeWidth={1.5} />}
-              {theme === 'dark' ? 'Light' : 'Dark'}
+              {resolvedTheme === 'dark' ? <Sun size={16} strokeWidth={1.5} /> : <Moon size={16} strokeWidth={1.5} />}
+              {resolvedTheme === 'dark' ? 'Light' : 'Dark'}
             </button>
             <button className="md:hidden text-(--accent)" onClick={() => setIsMenuOpen(true)}>
               <Menu size={24} strokeWidth={1.5} />
@@ -230,8 +231,8 @@ const Navbar: React.FC = () => {
             onClick={toggleTheme}
             aria-label="Toggle theme"
           >
-            {theme === 'dark' ? <Sun size={16} strokeWidth={1.5} /> : <Moon size={16} strokeWidth={1.5} />}
-            {theme === 'dark' ? 'Light' : 'Dark'}
+            {resolvedTheme === 'dark' ? <Sun size={16} strokeWidth={1.5} /> : <Moon size={16} strokeWidth={1.5} />}
+            {resolvedTheme === 'dark' ? 'Light' : 'Dark'}
           </button>
         </div>
       )}

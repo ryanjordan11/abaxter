@@ -51,7 +51,7 @@ const themeScript = `
   try {
     const key = 'theme';
     const stored = localStorage.getItem(key);
-    const theme = stored === 'light' || stored === 'dark' ? stored : 'light';
+    const theme = stored === 'light' || stored === 'dark' ? stored : 'dark';
     document.documentElement.setAttribute('data-theme', theme);
   } catch {}
 })();
@@ -63,7 +63,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="light" suppressHydrationWarning>
+    <html lang="en" data-theme="dark" suppressHydrationWarning>
       <head>
         <Script id="theme-init" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: themeScript }} />
         <Script

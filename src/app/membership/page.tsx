@@ -1,13 +1,6 @@
 import type { Metadata } from 'next';
-import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PAYPAL_URL } from '@/lib/links';
-
-export const metadata: Metadata = {
-  title: 'Membership',
-  description: 'Soul Mate Searching lifetime membership with ongoing compatibility analysis and guidance.',
-  keywords: ['lifetime membership', 'compatibility analysis', 'relationship coaching', 'soul mate searching']
-};
 
 export const metadata: Metadata = {
   title: 'Membership',
@@ -18,13 +11,15 @@ export const metadata: Metadata = {
 const MembershipPage = () => (
   <div className="px-6 py-12 animate-in fade-in duration-700">
     <div className="max-w-5xl mx-auto">
-      <h1 className="text-5xl md:text-6xl font-serif mb-4 text-center">Soul Mate Searching</h1>
-      <p className="text-(--accent) uppercase tracking-[0.4em] text-xs mb-6 text-center">Lifetime Membership – $999</p>
-      <p className="text-(--muted) font-light text-lg text-center max-w-3xl mx-auto">
-        Strategic Compatibility Guidance for Serious Singles
-      </p>
+      <div className="text-center mb-10">
+        <h1 className="text-5xl md:text-6xl font-serif mb-4">Soul Mate Searching</h1>
+        <p className="text-(--accent) uppercase tracking-[0.4em] text-xs mb-6">Lifetime Membership – $999</p>
+        <p className="text-(--muted) font-light text-lg max-w-3xl mx-auto">
+          Strategic Compatibility Guidance for Serious Singles
+        </p>
+      </div>
 
-      <div className="bg-(--panel) border border-(--border) p-10 md:p-14 mt-12">
+      <div className="bg-(--panel) border border-(--border) p-10 md:p-14">
         <div className="space-y-6 text-(--muted) font-light leading-relaxed text-lg">
           <p>Finding a life partner is not about fantasy. It is about alignment, discernment, and informed decision-making.</p>
           <p>
