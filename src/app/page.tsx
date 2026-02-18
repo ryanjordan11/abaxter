@@ -22,9 +22,9 @@ export const metadata: Metadata = {
 
 const HomePage = () => (
   <div className="animate-in fade-in slide-in-from-bottom-4 duration-1000">
-    <section className="min-h-[80vh] flex flex-col items-center justify-center px-6 -mt-[70px] lg:-mt-[78px]">
+    <section className="min-h-[80vh] flex flex-col items-center justify-center px-6 -mt-2 lg:-mt-[78px]">
       <div className="max-w-6xl mx-auto w-full grid lg:grid-cols-[1.05fr_0.95fr] gap-10 items-start">
-        <div className="text-center lg:text-left -mt-6 lg:-mt-10">
+        <div className="text-center lg:text-left mt-4 lg:-mt-10">
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-light mb-5 font-serif leading-tight hero-title">
             You Don&apos;t Have Relationship Problems.<br />
             <span className="text-(--accent) italic">You Have Clarity Problems.</span>
@@ -53,7 +53,7 @@ const HomePage = () => (
           </div>
         </div>
         <div className="flex justify-center lg:justify-end self-start">
-          <div className="relative w-full max-w-[1000px] aspect-square bg-(--panel) overflow-hidden -mt-[25px] lg:-mt-[33px]">
+          <div className="relative w-full max-w-[1000px] aspect-square bg-(--panel) overflow-hidden -mt-2 lg:-mt-[33px]">
             <Image
               src="/images/hero-01.png"
               alt="Celestial guidance"
