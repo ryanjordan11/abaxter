@@ -75,6 +75,87 @@ const ServicesPage = () => (
           </div>
         ))}
       </div>
+
+      <section className="mt-20 border-t border-(--border) pt-16">
+        <div className="text-center mb-12">
+          <p className="text-(--accent) uppercase tracking-[0.3em] text-xs font-medium">Empowering You</p>
+          <h2 className="text-4xl md:text-5xl font-serif mt-4">Coach Services</h2>
+        </div>
+
+        <div className="space-y-16 text-(--muted) font-light leading-relaxed text-lg">
+          <div>
+            <div className="text-(--accent) uppercase tracking-[0.3em] text-xs font-medium mb-3">
+              Unlocking the Secrets of Your Soul: Personality Typing
+            </div>
+            <div className="text-3xl font-serif text-(--accent) mb-4">$65</div>
+            <p>For over four decades, Scott has studied the architecture of personality, not as a trend, but as a sacred language.</p>
+            <p className="mt-4">
+              This session reveals the deeper pattern beneath your behaviors. Through personality typing and motivational analysis,
+              Scott decodes how you think, what drives you, where you withdraw, and where you shine.
+            </p>
+            <div className="mt-6">
+              <div className="text-[10px] uppercase tracking-[0.3em] text-(--muted-strong) mb-3">You Will Discover</div>
+              <ul className="space-y-2 text-sm">
+                <li>Your cognitive and emotional wiring</li>
+                <li>Your core motivational pattern</li>
+                <li>Stress and shadow tendencies</li>
+                <li>Relationship and communication style</li>
+                <li>Natural vocational alignment</li>
+              </ul>
+            </div>
+            <p className="mt-6">Clarity replaces confusion. You begin operating from design, not guesswork.</p>
+          </div>
+
+          <div>
+            <div className="text-(--accent) uppercase tracking-[0.3em] text-xs font-medium mb-3">
+              Unlocking the Divine: Gifts to Serve You in This Incarnation
+            </div>
+            <p className="text-sm uppercase tracking-[0.3em] text-(--muted-strong) mb-3">Stellium &amp; Planetary Alignment Focus</p>
+            <div className="text-3xl font-serif text-(--accent) mb-4">$65</div>
+            <p>Since 1974, astrology has been a lifelong devotion for Scott, not prediction, but revelation.</p>
+            <p className="mt-4">
+              This reading focuses on concentrated planetary energy, stelliums, and dominant alignments that define your soul&apos;s
+              gifts and service path.
+            </p>
+            <div className="mt-6">
+              <div className="text-[10px] uppercase tracking-[0.3em] text-(--muted-strong) mb-3">You Will Receive</div>
+              <ul className="space-y-2 text-sm">
+                <li>Stellium interpretation (if present)</li>
+                <li>Dominant planetary influence analysis</li>
+                <li>Element and modality balance</li>
+                <li>Core life themes</li>
+                <li>Inherent strengths and spiritual gifts</li>
+              </ul>
+            </div>
+            <p className="mt-6">You will see where your energy gathers power and how to consciously direct it.</p>
+          </div>
+
+          <div>
+            <div className="text-(--accent) uppercase tracking-[0.3em] text-xs font-medium mb-3">
+              I Am That I Am: The Divine You
+            </div>
+            <div className="text-3xl font-serif text-(--accent) mb-4">$125</div>
+            <p>This is Scott&apos;s integrative oracle session.</p>
+            <p className="mt-4">
+              Personality architecture and astrological blueprint are woven together into one cohesive map. Psychological depth meets
+              cosmic design.
+            </p>
+            <div className="mt-6">
+              <div className="text-[10px] uppercase tracking-[0.3em] text-(--muted-strong) mb-3">You Will Receive</div>
+              <ul className="space-y-2 text-sm">
+                <li>Personality synthesis</li>
+                <li>Astrological blueprint overview</li>
+                <li>Core wound and core gift integration</li>
+                <li>Incarnation theme clarification</li>
+                <li>Practical embodiment guidance</li>
+              </ul>
+            </div>
+            <p className="mt-6">This is not surface insight. It is a return to the eternal &quot;I Am&quot; within you.</p>
+          </div>
+        </div>
+
+        <p className="mt-12 text-(--accent) font-serif text-2xl text-center">Clarity begins within.</p>
+      </section>
     </div>
   </div>
 );

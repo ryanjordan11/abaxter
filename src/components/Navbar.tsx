@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
   const [isMobileToolsOpen, setIsMobileToolsOpen] = useState(false);
   const [theme, setTheme] = useState<'dark' | 'light'>(() => {
     if (typeof window === 'undefined') {
-      return 'dark';
+      return 'light';
     }
 
     const stored = window.localStorage.getItem(THEME_KEY);
@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
       return stored;
     }
 
-    return window.matchMedia?.('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    return 'light';
   });
   const toolsRef = useRef<HTMLDivElement | null>(null);
 

@@ -99,6 +99,24 @@ const ContactPage = () => {
         {status === 'error' && (
           <p className="mt-6 text-[11px] uppercase tracking-[0.3em] text-red-300">{error}</p>
         )}
+
+        <div className="mt-12 border-t border-(--border) pt-10 text-left">
+          <div className="text-[10px] uppercase tracking-[0.3em] text-(--accent) font-bold mb-4">
+            LifePath Career &amp; Relationship Coach
+          </div>
+          <div className="space-y-6 text-(--muted) font-light">
+            <div>
+              <div className="text-[10px] uppercase tracking-[0.3em] text-(--muted-strong) mb-2">Location</div>
+              <p>1102 Post Oak St.</p>
+              <p>Hearne, TX 77859</p>
+            </div>
+            <div>
+              <div className="text-[10px] uppercase tracking-[0.3em] text-(--muted-strong) mb-2">Contact</div>
+              <p>baxtersd@gmail.com</p>
+              <p>(254)654-1671</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
