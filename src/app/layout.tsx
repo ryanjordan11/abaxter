@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -19,6 +20,18 @@ export const metadata: Metadata = {
   description: "Soul analysis, numerology, and relationship alignment by Scott Baxter.",
 };
 
+const themeScript = `
+(() => {
+  try {
+    const key = 'theme';
+    const stored = localStorage.getItem(key);
+    const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+    const theme = stored === 'light' || stored === 'dark' ? stored : (prefersLight ? 'light' : 'dark');
+    document.documentElement.setAttribute('data-theme', theme);
+  } catch {}
+})();
+`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -26,6 +39,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="dark" suppressHydrationWarning>
+      <head>
+        <Script id="theme-init" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
