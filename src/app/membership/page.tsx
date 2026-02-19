@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { PAYPAL_URL } from '@/lib/links';
+import { buildPaypalUrl } from '@/lib/links';
 
 export const metadata: Metadata = {
   title: 'Membership',
@@ -167,7 +167,7 @@ const MembershipPage = () => (
       <div className="mt-16 text-center">
         <Link
           className="bg-(--accent) text-(--accent-contrast) px-12 py-5 uppercase tracking-[0.2em] text-[10px] hover:bg-[#c4a030] transition-all inline-block"
-          href={PAYPAL_URL}
+          href={buildPaypalUrl()}
         >
           Join Lifetime Membership
         </Link>
