@@ -1,5 +1,5 @@
 import React from 'react';
-import { Compass, MessageCircle, Moon, Star } from 'lucide-react';
+import { Compass, Facebook, MessageCircle, Moon, Star } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const year = new Date().getFullYear();
@@ -14,6 +14,13 @@ const Footer: React.FC = () => {
         <Star size={16} strokeWidth={1} />
         <Moon size={16} strokeWidth={1} />
         <Compass size={16} strokeWidth={1} />
+        <a
+          href="https://www.facebook.com/64Baxter"
+          className="hover:text-(--accent) transition-colors"
+          aria-label="Facebook"
+        >
+          <Facebook size={16} strokeWidth={1} />
+        </a>
       </div>
       <div className="text-[10px] uppercase tracking-[0.4em] text-(--muted-strong) max-w-xs mx-auto leading-loose">
         <div>1102 Post Oak St.</div>
